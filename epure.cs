@@ -46,12 +46,12 @@ namespace VMS.TPS
             string WORKBOOK_RESULT_DIR = System.IO.Path.GetTempPath();
 
 
-            string filepath = @"\\srv015\SF_COM\SIMON_LU\dd.pdf";
+            //string filepath = @"\\srv015\SF_COM\SIMON_LU\dd.pdf";
             string patientID = ID;// "202204584";
             Console.WriteLine("patient ID "  +patientID);
-            Console.ReadLine();
+           // Console.ReadLine();
 //            AriaSender asender = new AriaSender(filepath, patientID);
-            AriaSender asender = new AriaSender(filepath, patientID);
+            AriaSender asender = new AriaSender(path, patientID);
 
 
 
