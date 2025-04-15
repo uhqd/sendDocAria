@@ -34,7 +34,7 @@ namespace SEND_DOCUMENT
 
             myuser = @"admin\simon_lu";
 
-            //Données serveur pour utilsiation des aria webservices
+            // this values are obsolete: change to yours
             string docKey = "ce04163e-39dd-4be5-b3c1-da7154588c7a";
             string hostName = "srvaria15-web";
             string port = "55051";
@@ -63,12 +63,7 @@ namespace SEND_DOCUMENT
             };
             var request_base = "{\"__type\":\"";
             var request_document = $"{request_base}InsertDocumentRequest:http://services.varian.com/Patient/Documents\",{JsonConvert.SerializeObject(documentPushRequest).TrimStart('{')}}}";
-          //  Console.WriteLine(request_document.ToString()); 
             string response_document = SendData(request_document, true, docKey, hostName, port);
-            //Console.WriteLine("\n\n\n"+response_document);
-            //
-            //Console.ReadLine();
-            // MessageBox.Show(response_document);
             if (!response_document.Contains("GatewayError"))
             {
                 VMS.OIS.ARIAExternal.WebServices.Documents.Contracts.DocumentResponse documentResponse = JsonConvert.DeserializeObject<VMS.OIS.ARIAExternal.WebServices.Documents.Contracts.DocumentResponse>(response_document);
@@ -91,7 +86,7 @@ namespace SEND_DOCUMENT
 
             myuser = @"admin\simon_lu";
 
-            //Données serveur pour utilsiation des aria webservices
+            // this values are obsolete: change to yours
             string docKey = "ce04163e-39dd-4be5-b3c1-da7154588c7a";
             string hostName = "srvaria15-web";
             string port = "55051";
